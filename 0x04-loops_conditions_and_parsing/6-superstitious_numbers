@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# displays number from 1 to 20
+# displays 4 and then "bad luck from China"
+# displays 9 and then "bad luck from Japan"
+# displays 17 and then "bad luck from Italy"
+
+number=1
+while [ $number -le 20 ]
+do
+	echo "$number"
+
+	if [ $number -eq 4 ]
+	then
+		echo "bad luck from China"
+	fi
+
+	if [ $number -eq 9 ]
+	then
+		echo "bad luck from Japan"
+	fi
+
+	if [ $number -eq 17 ]
+	then
+		echo "bad luck from Italy"
+	fi
+
+	((number++))
+done
