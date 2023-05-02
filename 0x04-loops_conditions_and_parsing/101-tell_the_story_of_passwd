@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# displays the content of the /etc/passwd file
+# only display username, user id, and home dir path for the user fields
+
+while IFS=: read -r username password uid gid gecos home login_shell
+do
+	echo "The user $username is part of the $gid gang, lives in $home and rides $login_shell. $uid's place is protected by the passcode $password, more info about the user here: $gecos"
+done < /etc/passwd
