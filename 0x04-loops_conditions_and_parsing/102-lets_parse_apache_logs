@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# prints IP HTTP_CODE in a list mode
+
+gawk -F" " '{ print $1" "$9 }' apache-access.log
