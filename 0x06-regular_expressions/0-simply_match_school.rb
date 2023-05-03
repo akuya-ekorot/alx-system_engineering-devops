@@ -7,4 +7,4 @@ arg = ARGV[0]
 match = arg.match(/School/)
 
 # print the match to the console if match was found
-puts match[0] if match
+puts match ? match[0] : ''
