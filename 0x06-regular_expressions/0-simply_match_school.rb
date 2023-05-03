@@ -4,7 +4,7 @@
 arg = ARGV[0]
 
 # apply regex and find match
-match = arg.match(/School/)
+matches = arg.scan(/School/)
 
 # print the match to the console if match was found
-puts match ? match[0] : ''
+puts matches.join("")
