@@ -4,7 +4,7 @@
 arg = ARGV[0]
 
 # find matches
-matches = arg.scan(/hbt{1,4}n/)
+matches = arg.scan(/hbt{1,}n/)
 
 # print matches
-puts matches.join("")
+puts matches.join()
