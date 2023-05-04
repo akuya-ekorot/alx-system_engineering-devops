@@ -13,6 +13,8 @@ This directory contains tasks for the Networking Basics project in ALX.
   - [Layer 4: Transport Layer](#transport-layer)
   - [Layer 5: Session Layer](#session-layer)
   - [Layer 6: Application Layer](#application-layer)
+- [Types of Networks](#network-types)
+  - [LAN vs WAN](#lan-vs-wan)
 
 ### OSI Model<a name="osi-model" />
 
@@ -96,3 +98,17 @@ This directory contains tasks for the Networking Basics project in ALX.
 - Think of programs such as web browsers and email programs.
 - Functions in this layer typically include file sharing, message handling, and database access.
 - Most common protocols in this layer include HTTP, FTP, SMB/CIFS/ TFTP, and SMTP.
+
+### Types of Networks<a name="network-types" />
+
+- It's helpful to think of the different types of networks in terms of scope or scale.
+- Common types of area networks are:
+  - LAN: Local Area Network
+  - WAN: Wide Area Network
+  - WLAN: Wireless Local Area Network
+
+#### LAN vs WAN<a name="lan-vs-wan" />
+
+- LAN connects networked devices over a relatively short distance while WAN spans a large physical distance. The internet is a WAN.
+- WAN is geographically-dispersed collection of LANs.
+- Most WANs aren't owned by a single entity and exist under collective or distributed ownership and mangement.
