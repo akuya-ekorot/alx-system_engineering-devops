@@ -11,8 +11,8 @@ This directory contains tasks for the Networking Basics project in ALX.
 ### OSI Model<a name="osi-model" />
 
 - Open Systems Interconnection model (OSI model)
-- A *conceptual model* that provides a *common basis* for the coordination of \[ISO\] *standards development* for the purpose of *systems interconnection.*
-- According to OSI reference model, cummunication between systems are split into *seven abstraction layers*:
+- A **conceptual model** that provides a **common basis** for the coordination of \[ISO\] **standards development** for the purpose of **systems interconnection.**
+- According to OSI reference model, cummunication between systems are split into **seven abstraction layers**:
   - Physical
   - Data
   - Link
