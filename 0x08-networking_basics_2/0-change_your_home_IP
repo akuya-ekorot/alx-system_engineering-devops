@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# changes where localhost and facebook.com point to
+
+cp /etc/hosts ~/hosts.new
+
+echo "# ALX Task, changing hosts" >> ~/hosts.new
+echo "8.8.8.8	facebook.com" >> ~/hosts.new
+sed -i -e "s/127.0.0.1\tlocalhost/127.0.0.2\tlocalhost/g" ~/hosts.new
+
+cp -f ~/hosts.new /etc/hosts
