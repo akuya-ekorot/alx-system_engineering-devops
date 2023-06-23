@@ -4,7 +4,7 @@ $bin = '/usr/bin'
 # Update the package manager
 exec { 'update':
   command => 'apt-get update',
-  path	=> $bin,
+  path    => $bin,
 }
 
 # Install Python 3.8.10 using apt
