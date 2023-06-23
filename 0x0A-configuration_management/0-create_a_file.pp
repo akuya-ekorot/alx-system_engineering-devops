@@ -1,3 +1,5 @@
+# Creates the file school in the /tmp directory with the content "I love Puppet" and the permissions 0744.
+
 $doc_root = '/tmp'
 
 file { $doc_root:
