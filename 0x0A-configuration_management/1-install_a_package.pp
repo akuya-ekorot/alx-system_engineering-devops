@@ -25,10 +25,3 @@ package { 'flask':
   provider => 'pip3',
   require  => Package['python3-pip'],
 }
-
-# Install Werkzug 2.1.1
-package { 'werkzug':
-  ensure   => '2.1.1',
-  provider => 'pip3',
-  require  => Package['python3-pip'],
-}
