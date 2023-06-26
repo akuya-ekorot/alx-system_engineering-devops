@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script installs and configures nginx web server
+
+# Install nginx
+apt-get update
+apt-get install -y nginx
+
+# Make sure nginx is running
+service nginx start
+
+# Make sure nginx starts on boot
+update-rc.d nginx defaults
+
+# Edit contents of /var/www/html/index.nginx-debian.html
+echo "Hello World!" > /var/www/html/index.nginx-debian.html

@@ -14,4 +14,4 @@ IP="$2"
 USERNAME="$3"
 SSH_KEY="$4"
 
-scp "$FILE" "$USERNAME"@"$IP":~/
+scp -o StrictHostKeyChecking=no "$FILE" "$USERNAME"@"$IP":~/
