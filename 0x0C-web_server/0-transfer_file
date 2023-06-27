@@ -15,7 +15,7 @@ USERNAME="$3"
 SSH_KEY="$4"
 
 if [ -n "$SSH_KEY" ]; then
-	scp -F "$SSH_KEY" -o StrictHostKeyChecking=no "$FILE" "$USERNAME"@"$IP":~/
+	scp -i "$SSH_KEY" -o StrictHostKeyChecking=no "$FILE" "$USERNAME"@"$IP":~/
 else
 	scp -o StrictHostKeyChecking=no "$FILE" "$USERNAME"@"$IP":~/
 fi
