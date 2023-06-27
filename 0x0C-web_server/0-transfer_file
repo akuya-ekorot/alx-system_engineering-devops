@@ -4,7 +4,7 @@
 # Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY
 
 # Check if the number of arguments is correct
-if [ $# -lt 4 ]; then
+if [ $# -lt 3 ]; then
 	echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
 	exit 1
 fi
@@ -14,4 +14,8 @@ IP="$2"
 USERNAME="$3"
 SSH_KEY="$4"
 
-scp -F "$SSH_KEY" -o StrictHostKeyChecking=no "$FILE" "$USERNAME"@"$IP":~/
+if [ -n "$SSH_KEY" ]; then
+	scp -F "$SSH_KEY" -o StrictHostKeyChecking=no "$FILE" "$USERNAME"@"$IP":~/
+else
+	scp -o StrictHostKeyChecking=no "$FILE" "$USERNAME"@"$IP":~/
+fi
