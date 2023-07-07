@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Start apache on container
 
-apt install apache2
-
-service apache2 start
+docker run -p 8080:80 -d -it --name apache_0 holbertonschool/265-0
+docker exec -it apache_0 bash -c "apt install apache2 && service apache2 start"
