@@ -12,4 +12,4 @@ service nginx start
 update-rc.d nginx defaults
 
 # Edit contents of /var/www/html/index.nginx-debian.html
-echo "Hello World!" > /var/www/html/index.nginx-debian.html
+echo "Hello World!" | tee /var/www/html/index.nginx-debian.html
