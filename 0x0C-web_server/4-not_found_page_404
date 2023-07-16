@@ -5,8 +5,6 @@
 apt-get -y update
 apt-get -y install nginx
 
-# Create the custom 404 page
-mkdir -p /etc/nginx/html/error_pages
 
 # Create the custom 404 page
 touch /var/www/html/404.html
