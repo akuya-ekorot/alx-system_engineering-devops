@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 # Add a custom header to the http response
 
+# Install nginx
+apt-get update
+apt-get install -y nginx
+
+# start nginx
+service nginx start
+
+# Add a custom header to the http response
 CONFIG="
 server {
 	listen 80 default_server;
@@ -25,3 +33,4 @@ server {
 
 echo $CONFIG > /etc/nginx/sites-available/default
 service nginx restart
+service nginx status
