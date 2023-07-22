@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# Add a custom header to the http response
+
+CONFIG="
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	root /var/www/html;
+
+	index index.html index.htm index.nginx-debian.html;
+
+	server_name _;
+
+	location / {
+		try_files \$uri \$uri/ \=404;
+		add_header X-Served-By \$hostname always;
+	}
+
+	location /redirect_me {
+		return 301 https://www.youtube.com/watch?v=dQw4w9WgXcQ;
+	}
+}
+"
+
+echo $CONFIG > /etc/nginx/sites-available/default
+service nginx restart
