@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+# Requirements:
+# Install haproxy load balancer
+# Send traffic to web-01 and web-02
+# Distribute requests using a roundrobin algorithm
+# Make sure that haproxy can be managed via an init script
+
+# Install haproxy
+apt-get -y update
+apt-get -y install haproxy
+
+# Configure haproxy
+WEB_01="100.26.138.246:80"
+WEB_02="52.91.135.137:80"
+CONFIG_FILE="/etc/haproxy/haproxy.cfg"
+CONFIG="
+global
+	log /dev/log local0
+	log /dev/log local1 notice
+	chroot /var/lib/haproxy
+	stats socket /run/haproxy/admin.sock mode 660 level admin expose-fd listeners
+	stats timeout 30s
+	user haproxy
+	group haproxy
+	daemon
+
+defaults
+	log     global
+	mode    http
+	option  httplog
+	option  dontlognull
+	timeout connect 5000
+	timeout client  50000
+	timeout server  50000
+
+frontend http_front
+    bind *:80
+	stats uri /haproxy?stats
+	default_backend http_back
+
+backend http_back
+    balance roundrobin
+	server web-01 '$WEB_01' check
+	server web-02 '$WEB_02' check
+"
+
+# Write config to file
+mv "$CONFIG_FILE" "$CONFIG_FILE".bak
+echo "$CONFIG" > "$CONFIG_FILE"
+
+# Start haproxy
+service haproxy restart
+service haproxy status
